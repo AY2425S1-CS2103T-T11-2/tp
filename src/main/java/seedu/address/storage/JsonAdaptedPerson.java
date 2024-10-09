@@ -69,6 +69,19 @@ class JsonAdaptedPerson {
         assignmentScore = assignment != null ? assignment.score : null;
     }
 
+    public JsonAdaptedPerson(String name, String phone, String email, String address, List<JsonAdaptedTag> tags) {
+        this.name = name;
+        this.phone = phone;
+        this.email = email;
+        this.address = address;
+        if (tags != null) {
+            this.tags.addAll(tags);
+        }
+        assignmentName = null;
+        assignmentScore = null;
+    }
+
+
     /**
      * Converts this Jackson-friendly adapted person object into the model's {@code Person} object.
      *

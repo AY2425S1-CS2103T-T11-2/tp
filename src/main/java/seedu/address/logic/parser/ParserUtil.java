@@ -2,6 +2,10 @@ package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
 
+import java.util.Collection;
+import java.util.HashSet;
+import java.util.Set;
+
 import seedu.address.commons.core.index.Index;
 import seedu.address.commons.util.StringUtil;
 import seedu.address.logic.parser.exceptions.ParseException;
@@ -11,11 +15,9 @@ import seedu.address.model.person.Name;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 
-import java.util.Collection;
-import java.util.HashSet;
-import java.util.Set;
-
-/** Contains utility methods used for parsing strings in the various *Parser classes. */
+/**
+ * Contains utility methods used for parsing strings in the various *Parser classes.
+ */
 public class ParserUtil {
 
     public static final String MESSAGE_INVALID_INDEX = "Index is not a non-zero unsigned integer.";
@@ -109,7 +111,9 @@ public class ParserUtil {
         return new Tag(trimmedTag);
     }
 
-    /** Parses {@code Collection<String> tags} into a {@code Set<Tag>}. */
+    /**
+     * Parses {@code Collection<String> tags} into a {@code Set<Tag>}.
+     */
     public static Set<Tag> parseTags(Collection<String> tags) throws ParseException {
         requireNonNull(tags);
         final Set<Tag> tagSet = new HashSet<>();
@@ -119,11 +123,25 @@ public class ParserUtil {
         return tagSet;
     }
 
+    /**
+     * Parse assignment name string.
+     *
+     * @param assignment the assignment
+     * @return the string
+     * @throws ParseException the parse exception
+     */
     public static String parseAssignmentName(String assignment) throws ParseException {
         requireNonNull(assignment);
         return assignment.trim();
     }
 
+    /**
+     * Parse score float.
+     *
+     * @param score the score
+     * @return the float
+     * @throws ParseException the parse exception
+     */
     public static float parseScore(String score) throws ParseException {
         requireNonNull(score);
 

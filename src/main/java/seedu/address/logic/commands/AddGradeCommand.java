@@ -1,10 +1,12 @@
 package seedu.address.logic.commands;
 
+import static java.util.Objects.requireNonNull;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ASSIGNMENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_SCORE;
 
-import static java.util.Objects.requireNonNull;
+import java.util.Optional;
+import java.util.Set;
 
 import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
@@ -16,30 +18,30 @@ import seedu.address.model.person.Person;
 import seedu.address.model.person.Phone;
 import seedu.address.model.tag.Tag;
 
-import java.util.Optional;
-import java.util.Set;
-
+/**
+ * The type Add grade command.
+ */
 public class AddGradeCommand extends Command {
     public static final String COMMAND_WORD = "addGrade";
     public static final String MESSAGE_USAGE =
-            COMMAND_WORD
-                    + ": Adds a grade of an assignment to the person. "
-                    + "Parameters: "
-                    + PREFIX_NAME
-                    + "NAME "
-                    + PREFIX_ASSIGNMENT
-                    + "ASSIGNMENT "
-                    + PREFIX_SCORE
-                    + "SCORE "
-                    + "Example: "
-                    + COMMAND_WORD
-                    + " "
-                    + PREFIX_NAME
-                    + "John Doe "
-                    + PREFIX_ASSIGNMENT
-                    + "Ex09 "
-                    + PREFIX_SCORE
-                    + "9 ";
+        COMMAND_WORD
+            + ": Adds a grade of an assignment to the person. "
+            + "Parameters: "
+            + PREFIX_NAME
+            + "NAME "
+            + PREFIX_ASSIGNMENT
+            + "ASSIGNMENT "
+            + PREFIX_SCORE
+            + "SCORE "
+            + "Example: "
+            + COMMAND_WORD
+            + " "
+            + PREFIX_NAME
+            + "John Doe "
+            + PREFIX_ASSIGNMENT
+            + "Ex09 "
+            + PREFIX_SCORE
+            + "9 ";
 
     private final AddGradeCommandFormat addGradeCommandFormat;
 
@@ -53,8 +55,8 @@ public class AddGradeCommand extends Command {
 
         // Find the person based on the provided name
         Optional<Person> personOptional = model.getAddressBook().getPersonList().stream()
-                .filter(p -> p.getName().equals(addGradeCommandFormat.getName()))
-                .findFirst();
+            .filter(p -> p.getName().equals(addGradeCommandFormat.getName()))
+            .findFirst();
 
         if (personOptional.isEmpty()) {
             throw new CommandException("Person not found");
@@ -85,6 +87,9 @@ public class AddGradeCommand extends Command {
         return new Person(name, phone, email, address, tags, assignment);
     }
 
+    /**
+     * The type Add grade command format.
+     */
     public static class AddGradeCommandFormat {
         private Name name;
         private String assignment;

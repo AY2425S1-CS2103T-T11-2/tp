@@ -2,14 +2,14 @@ package seedu.address.model.person;
 
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
 
-import seedu.address.commons.util.ToStringBuilder;
-import seedu.address.model.assignment.Assignment;
-import seedu.address.model.tag.Tag;
-
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
+
+import seedu.address.commons.util.ToStringBuilder;
+import seedu.address.model.assignment.Assignment;
+import seedu.address.model.tag.Tag;
 
 /**
  * Represents a Person in the address book. Guarantees: details are present and not null, field
@@ -27,7 +27,16 @@ public class Person {
     private final Set<Tag> tags = new HashSet<>();
     private Assignment assignment;
 
-    /** Every field must be present and not null. */
+    /**
+     * Every field must be present and not null.
+     *
+     * @param name       the name
+     * @param phone      the phone
+     * @param email      the email
+     * @param address    the address
+     * @param assignment the assignment
+     * @param tags       the tags
+     */
     public Person(Name name, Phone phone, Email email, Address address, Assignment assignment, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
@@ -38,13 +47,23 @@ public class Person {
         this.assignment = assignment;
     }
 
+    /**
+     * Instantiates a new Person.
+     *
+     * @param name       the name
+     * @param phone      the phone
+     * @param email      the email
+     * @param address    the address
+     * @param tags       the tags
+     * @param assignment the assignment
+     */
     public Person(
-            Name name,
-            Phone phone,
-            Email email,
-            Address address,
-            Set<Tag> tags,
-            Assignment assignment) {
+        Name name,
+        Phone phone,
+        Email email,
+        Address address,
+        Set<Tag> tags,
+        Assignment assignment) {
         requireAllNonNull(name, phone, email, address, tags, assignment);
         this.name = name;
         this.phone = phone;
@@ -54,6 +73,15 @@ public class Person {
         this.assignment = assignment;
     }
 
+    /**
+     * Instantiates a new Person.
+     *
+     * @param name    the name
+     * @param phone   the phone
+     * @param email   the email
+     * @param address the address
+     * @param tags    the tags
+     */
     public Person(Name name, Phone phone, Email email, Address address, Set<Tag> tags) {
         requireAllNonNull(name, phone, email, address, tags);
         this.name = name;
@@ -63,21 +91,47 @@ public class Person {
         this.tags.addAll(tags);
     }
 
+    /**
+     * Gets name.
+     *
+     * @return the name
+     */
     public Name getName() {
         return name;
     }
 
+    /**
+     * Gets phone.
+     *
+     * @return the phone
+     */
     public Phone getPhone() {
         return phone;
     }
 
+    /**
+     * Gets email.
+     *
+     * @return the email
+     */
     public Email getEmail() {
         return email;
     }
 
+    /**
+     * Gets address.
+     *
+     * @return the address
+     */
     public Address getAddress() {
         return address;
     }
+
+    /**
+     * Gets assignment.
+     *
+     * @return the assignment
+     */
     public Assignment getAssignment() {
         return assignment;
     }
@@ -85,6 +139,8 @@ public class Person {
     /**
      * Returns an immutable tag set, which throws {@code UnsupportedOperationException} if
      * modification is attempted.
+     *
+     * @return the tags
      */
     public Set<Tag> getTags() {
         return Collections.unmodifiableSet(tags);
@@ -93,6 +149,9 @@ public class Person {
     /**
      * Returns true if both persons have the same name. This defines a weaker notion of equality
      * between two persons.
+     *
+     * @param otherPerson the other person
+     * @return the boolean
      */
     public boolean isSamePerson(Person otherPerson) {
         if (otherPerson == this) {
@@ -119,10 +178,10 @@ public class Person {
 
         Person otherPerson = (Person) other;
         return name.equals(otherPerson.name)
-                && phone.equals(otherPerson.phone)
-                && email.equals(otherPerson.email)
-                && address.equals(otherPerson.address)
-                && tags.equals(otherPerson.tags);
+            && phone.equals(otherPerson.phone)
+            && email.equals(otherPerson.email)
+            && address.equals(otherPerson.address)
+            && tags.equals(otherPerson.tags);
     }
 
     @Override
@@ -134,12 +193,12 @@ public class Person {
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .add("name", name)
-                .add("phone", phone)
-                .add("email", email)
-                .add("address", address)
-                .add("tags", tags)
-                .add("assignment", assignment)
-                .toString();
+            .add("name", name)
+            .add("phone", phone)
+            .add("email", email)
+            .add("address", address)
+            .add("tags", tags)
+            .add("assignment", assignment)
+            .toString();
     }
 }
