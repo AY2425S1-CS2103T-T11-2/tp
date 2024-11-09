@@ -11,7 +11,6 @@ import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
 
@@ -24,7 +23,7 @@ public class AddCommandIntegrationTest {
 
     @BeforeEach
     public void setUp() {
-        model = new ModelManager(getTypicalAddressBook(), new UserPrefs(), new PredefinedAssignmentsData());
+        model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     }
 
     @Test
@@ -33,8 +32,8 @@ public class AddCommandIntegrationTest {
 
         Model expectedModel = new ModelManager(
                 getTypicalAddressBook(),
-                new UserPrefs(),
-                new PredefinedAssignmentsData());
+                new UserPrefs()
+                );
         expectedModel.addPerson(validPerson);
 
         assertCommandSuccess(new AddCommand(validPerson), model,

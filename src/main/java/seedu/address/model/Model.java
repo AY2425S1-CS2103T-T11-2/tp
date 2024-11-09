@@ -8,7 +8,6 @@ import java.util.function.Predicate;
 
 import javafx.collections.ObservableList;
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.assignment.ReadOnlyPredefinedAssignmentsData;
 import seedu.address.model.person.Github;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -112,27 +111,6 @@ public interface Model {
      */
     void updateSortedPersonList(Comparator<Person> comparator);
 
-    /**
-     * Returns true if an assignment with the name is present.
-     */
-    boolean hasAssignment(String name);
-
-    /**
-     * Returns the maximum score for a specified assignment.
-     *
-     * @param assignment The name of the assignment to retrieve the maximum score for.
-     * @return The maximum score for the specified assignment.
-     */
-    float getMaxScore(String assignment);
-
-    /**
-     * Retrieves the exact name of a specified assignment.
-     *
-     * @param name The name to retrieve.
-     * @return The assignment name as a {@code String}.
-     */
-    String getAssignmentName(String name);
-
 
     /**
      * Checks if a person with the specified name exists in the address book.
@@ -141,13 +119,6 @@ public interface Model {
      * @return {@code true} if a person with the specified name exists, {@code false} otherwise.
      */
     boolean hasName(Name name);
-
-    /**
-     * Retrieves the predefined assignments data as a read-only data object.
-     *
-     * @return A {@code ReadOnlyPredefinedAssignmentsData} object containing predefined assignments.
-     */
-    ReadOnlyPredefinedAssignmentsData getPredefinedAssignments();
 
     /**
      * Returns {@code Github} detials of the specified {@name}

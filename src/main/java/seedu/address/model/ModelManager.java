@@ -15,8 +15,6 @@ import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
 import seedu.address.commons.core.GuiSettings;
 import seedu.address.commons.core.LogsCenter;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
-import seedu.address.model.assignment.ReadOnlyPredefinedAssignmentsData;
 import seedu.address.model.person.Github;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -31,19 +29,16 @@ public class ModelManager implements Model {
     private final UserPrefs userPrefs;
     private final FilteredList<Person> filteredPersons;
     private final SortedList<Person> sortedPersons;
-    private final PredefinedAssignmentsData predefinedAssignmentsData;
 
     /**
      * Initializes a ModelManager with the given addressBook and userPrefs.
      *
      * @param addressBook               the address book
      * @param userPrefs                 the user prefs
-     * @param predefinedAssignmentsData the predefined assignments data
      */
     public ModelManager(ReadOnlyAddressBook addressBook,
-                        ReadOnlyUserPrefs userPrefs,
-                        ReadOnlyPredefinedAssignmentsData predefinedAssignmentsData) {
-        requireAllNonNull(addressBook, userPrefs, predefinedAssignmentsData);
+                        ReadOnlyUserPrefs userPrefs) {
+        requireAllNonNull(addressBook, userPrefs);
 
         logger.fine("Initializing with address book: " + addressBook + " and user prefs " + userPrefs);
 
@@ -51,14 +46,13 @@ public class ModelManager implements Model {
         this.userPrefs = new UserPrefs(userPrefs);
         filteredPersons = new FilteredList<>(this.addressBook.getPersonList());
         sortedPersons = new SortedList<>(filteredPersons);
-        this.predefinedAssignmentsData = new PredefinedAssignmentsData(predefinedAssignmentsData);
     }
 
     /**
      * Instantiates a new Model manager.
      */
     public ModelManager() {
-        this(new AddressBook(), new UserPrefs(), new PredefinedAssignmentsData());
+        this(new AddressBook(), new UserPrefs());
     }
 
     //=========== UserPrefs ==================================================================================
@@ -181,32 +175,9 @@ public class ModelManager implements Model {
                 && filteredPersons.equals(otherModelManager.filteredPersons);
     }
 
-    //=========== Predefined assignments accessors =============================================================
-
-    @Override
-    public boolean hasAssignment(String name) {
-        return predefinedAssignmentsData.hasAssignment(name);
-    }
-
-
-    @Override
-    public float getMaxScore(String assignment) {
-        return predefinedAssignmentsData.getMaxScore(assignment);
-    }
-
-    @Override
-    public String getAssignmentName(String name) {
-        return predefinedAssignmentsData.getAssignmentName(name);
-    }
-
     @Override
     public boolean hasName(Name name) {
         return addressBook.hasName(name);
-    }
-
-    @Override
-    public ReadOnlyPredefinedAssignmentsData getPredefinedAssignments() {
-        return predefinedAssignmentsData;
     }
 
     @Override

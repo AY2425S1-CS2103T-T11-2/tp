@@ -16,13 +16,11 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.util.SampleAssignmentsUtil;
 
 public class RemoveGradeCommandTest {
     private final Model model = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            SampleAssignmentsUtil.getSamplePredefinedAssignments());
+            new UserPrefs());
 
     @Test
     public void constructor_nullAssignmentFormat_throwsNullPointerException() {

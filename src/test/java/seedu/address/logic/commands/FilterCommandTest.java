@@ -22,19 +22,17 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.TagContainsKeywordsPredicate;
 import seedu.address.model.tag.Tag;
 
 public class FilterCommandTest {
     private Model model = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs());
     private Model expectedModel = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs()
+            );
 
     @Test
     public void equals() {

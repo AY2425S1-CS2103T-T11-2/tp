@@ -27,12 +27,10 @@ import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.Person;
 import seedu.address.storage.JsonAddressBookStorage;
 import seedu.address.storage.JsonUserPrefsStorage;
 import seedu.address.storage.StorageManager;
-import seedu.address.storage.assignment.JsonPredefinedAssignmentDataStorage;
 import seedu.address.testutil.PersonBuilder;
 
 public class LogicManagerTest {
@@ -50,12 +48,9 @@ public class LogicManagerTest {
         JsonAddressBookStorage addressBookStorage =
                 new JsonAddressBookStorage(temporaryFolder.resolve("kontacts.json"));
         JsonUserPrefsStorage userPrefsStorage = new JsonUserPrefsStorage(temporaryFolder.resolve("userPrefs.json"));
-        JsonPredefinedAssignmentDataStorage predefinedAssignmentDataStorage =
-                new JsonPredefinedAssignmentDataStorage(temporaryFolder.resolve("asign"));
         StorageManager storage = new StorageManager(
                 addressBookStorage,
-                userPrefsStorage,
-                predefinedAssignmentDataStorage);
+                userPrefsStorage);
         logic = new LogicManager(model, storage);
     }
 
@@ -136,8 +131,7 @@ public class LogicManagerTest {
                                       String expectedMessage) {
         Model expectedModel = new ModelManager(
                 model.getAddressBook(),
-                new UserPrefs(),
-                new PredefinedAssignmentsData());
+                new UserPrefs());
         assertCommandFailure(inputCommand, expectedException, expectedMessage, expectedModel);
     }
 
@@ -163,9 +157,6 @@ public class LogicManagerTest {
      */
     private void assertCommandFailureForExceptionFromStorage(IOException e, String expectedMessage) {
         Path prefPath = temporaryFolder.resolve("ExceptionUserPrefs.json");
-        JsonPredefinedAssignmentDataStorage predefinedAssignmentDataStorage =
-                new JsonPredefinedAssignmentDataStorage(
-                        temporaryFolder.resolve("asign"));
         // Inject LogicManager with an AddressBookStorage that throws the IOException e when saving
         JsonAddressBookStorage addressBookStorage = new JsonAddressBookStorage(prefPath) {
             @Override
@@ -180,8 +171,7 @@ public class LogicManagerTest {
                         temporaryFolder.resolve("ExceptionUserPrefs.json"));
         StorageManager storage = new StorageManager(
                 addressBookStorage,
-                userPrefsStorage,
-                predefinedAssignmentDataStorage);
+                userPrefsStorage);
 
         logic = new LogicManager(model, storage);
 

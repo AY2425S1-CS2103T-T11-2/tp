@@ -16,7 +16,6 @@ import seedu.address.logic.commands.exceptions.CommandException;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.util.SampleAssignmentsUtil;
 
 /**
  * Contains integration tests for the {@code ExportCommand} class.
@@ -25,8 +24,7 @@ import seedu.address.model.util.SampleAssignmentsUtil;
 public class ExportCommandTest {
     private final Model model = new ModelManager(
         getTypicalAddressBook(),
-        new UserPrefs(),
-        SampleAssignmentsUtil.getSamplePredefinedAssignments());
+        new UserPrefs());
 
     /**
      * Tests the successful execution of the ExportCommand when given a valid file path.

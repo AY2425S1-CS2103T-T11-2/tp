@@ -14,7 +14,6 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.comparator.ComparatorManager;
 import seedu.address.model.person.comparator.PersonComparator;
 import seedu.address.model.person.comparator.SortField;
@@ -23,12 +22,10 @@ import seedu.address.model.person.comparator.SortOrder;
 public class SortCommandTest {
     private Model model = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs());
     private Model expectedModel = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs());
 
     private ComparatorManager comparatorManager = new ComparatorManager();
 
@@ -113,12 +110,10 @@ public class SortCommandTest {
     public void execute_emptyList_success() {
         Model model = new ModelManager(
                 new AddressBook(),
-                new UserPrefs(),
-                new PredefinedAssignmentsData());
+                new UserPrefs());
         Model expectedModel = new ModelManager(
                 new AddressBook(),
-                new UserPrefs(),
-                new PredefinedAssignmentsData());
+                new UserPrefs());
 
         PersonComparator comparator = comparatorManager.getComparator(SortField.GITHUB, SortOrder.ASC);
         String expectedMessage =

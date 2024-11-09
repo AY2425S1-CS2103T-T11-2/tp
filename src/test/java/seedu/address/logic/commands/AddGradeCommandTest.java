@@ -13,7 +13,6 @@ import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
-import seedu.address.model.util.SampleAssignmentsUtil;
 import seedu.address.testutil.TypicalPersons;
 
 /**
@@ -25,8 +24,7 @@ import seedu.address.testutil.TypicalPersons;
 public class AddGradeCommandTest {
     private final Model model = new ModelManager(
         getTypicalAddressBook(),
-        new UserPrefs(),
-        SampleAssignmentsUtil.getSamplePredefinedAssignments());
+        new UserPrefs());
 
 
     /**
@@ -111,14 +109,4 @@ public class AddGradeCommandTest {
             .toList().get(0).getAssignment().get(name).getScore(), 9.0f);
 
     }
-
-    @Test
-    public void execute_helpString() throws Exception {
-        AddGradeCommand c = AddGradeCommand.showAssignmentDefault();
-        assertEquals(
-            c.execute(model).getFeedbackToUser(),
-            model.getPredefinedAssignments().toString());
-    }
-
-
 }

@@ -20,9 +20,6 @@ public class AddGradeCommandParser implements Parser<AddGradeCommand> {
 
     @Override
     public AddGradeCommand parse(String args) throws ParseException {
-        if (args.isEmpty()) {
-            return AddGradeCommand.showAssignmentDefault();
-        }
 
         // Tokenize the input arguments
         ArgumentMultimap argMultimap =

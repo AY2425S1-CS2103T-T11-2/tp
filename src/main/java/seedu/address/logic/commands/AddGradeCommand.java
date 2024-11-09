@@ -24,6 +24,7 @@ import seedu.address.model.tag.Tag;
  * Add assignment grades to an existing person in the address book.
  */
 public class AddGradeCommand extends Command {
+    public static final String INVALID_SCORE = "Score must be more than equal to zero.";
     public static final String COMMAND_WORD = "addGrade";
     public static final String COMMAND_WORD_SHORT_FORM = "ag";
     public static final String MESSAGE_USAGE =
@@ -56,22 +57,10 @@ public class AddGradeCommand extends Command {
             + "9";
     public static final String COMMAND_WORD_LOWER_CASE = "addgrade";
     public static final String MESSAGE_SUCCESS = "New assignment added: %1$s";
-    public static final String HELP_MESSAGE =
-            "Input addGrade without any fields to see list of assignments specified in database.";
-    private static final AddGradeCommand showAssignmentDefault = new AddGradeCommand(true);
 
     private final Name personName;
     private final Float score;
     private final String assignmentName;
-    private boolean showAssignments;
-
-
-    private AddGradeCommand(boolean showAssignments) {
-        this.personName = null;
-        this.score = null;
-        this.assignmentName = null;
-        this.showAssignments = showAssignments;
-    }
 
     /**
      * @param personName     Name of the person.
@@ -83,10 +72,6 @@ public class AddGradeCommand extends Command {
         this.personName = personName;
         this.score = score;
         this.assignmentName = assignmentName;
-    }
-
-    public static AddGradeCommand showAssignmentDefault() {
-        return showAssignmentDefault;
     }
 
     /**
@@ -120,34 +105,19 @@ public class AddGradeCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        if (showAssignments) {
-            return new CommandResult(model.getPredefinedAssignments().toString());
+        if (score < 0) {
+            throw new CommandException(INVALID_SCORE);
         }
-
-        // check if assignment is in predefined list
-        if (!model.hasAssignment(assignmentName)) {
-            throw new CommandException("Invalid assignment name: " + assignmentName + "\n" + HELP_MESSAGE);
-        }
-
-        // check if score is valid
-        if (score > model.getMaxScore(assignmentName) || score < 0) {
-            throw new CommandException("Score must be between 0.0 and " + model.getMaxScore(assignmentName));
-        }
-
         Person person = model.getPerson(personName)
                 .orElseThrow(() ->
                         new CommandException("Person " + personName + " not in address book"));
 
-        model.setPerson(person, createGradeToAddToPerson(person, model.getAssignmentName(assignmentName), score));
+        model.setPerson(person, createGradeToAddToPerson(person, assignmentName, score));
         return new CommandResult(String.format(MESSAGE_SUCCESS, assignmentName));
     }
 
     @Override
     public String toString() {
-        if (showAssignments) {
-            return "Show assignments command";
-        }
-
         return personName + " " + assignmentName + " " + score;
     }
 
@@ -156,8 +126,7 @@ public class AddGradeCommand extends Command {
         if (other instanceof AddGradeCommand otherCommand) {
             return Objects.equals(otherCommand.personName, personName)
                     && Objects.equals(otherCommand.assignmentName, assignmentName)
-                    && Objects.equals(otherCommand.score, score)
-                    && otherCommand.showAssignments == showAssignments;
+                    && Objects.equals(otherCommand.score, score);
         }
         return false;
     }

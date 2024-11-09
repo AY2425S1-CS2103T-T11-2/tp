@@ -18,7 +18,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 
 /**
@@ -27,12 +26,11 @@ import seedu.address.model.person.NameContainsKeywordsPredicate;
 public class FindCommandTest {
     private final Model model = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs()
+           );
     private final Model expectedModel = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs());
 
     @Test
     public void equals() {

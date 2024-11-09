@@ -2,7 +2,6 @@ package seedu.address.logic.commands;
 
 import static java.util.Objects.requireNonNull;
 import static seedu.address.commons.util.CollectionUtil.requireAllNonNull;
-import static seedu.address.logic.Messages.MESSAGE_INVALID_ASSIGNMENT_NAME;
 import static seedu.address.logic.Messages.MESSAGE_INVALID_PERSON_DISPLAYED_NAME;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_ASSIGNMENT;
 import static seedu.address.logic.parser.CliSyntax.PREFIX_NAME;
@@ -90,11 +89,6 @@ public class RemoveGradeCommand extends Command {
     public CommandResult execute(Model model) throws CommandException {
         requireNonNull(model);
 
-        // check if assignment is in predefined list
-        if (!model.hasAssignment(assignmentName)) {
-            throw new CommandException(String.format(MESSAGE_INVALID_ASSIGNMENT_NAME, assignmentName));
-        }
-
         Person person = model.getPerson(personName)
                 .orElseThrow(() ->
                         new CommandException(MESSAGE_INVALID_PERSON_DISPLAYED_NAME));
@@ -105,7 +99,7 @@ public class RemoveGradeCommand extends Command {
                     String.format(MESSAGE_FAILURE, assignmentName, personName));
         }
 
-        model.setPerson(person, createPersonWithRemovedGrade(person, model.getAssignmentName(assignmentName)));
+        model.setPerson(person, createPersonWithRemovedGrade(person, assignmentName));
         return new CommandResult(String.format(MESSAGE_SUCCESS, assignmentName, personName));
     }
 

@@ -18,7 +18,6 @@ import java.util.Arrays;
 import org.junit.jupiter.api.Test;
 
 import seedu.address.commons.core.GuiSettings;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.Github;
 import seedu.address.model.person.NameContainsKeywordsPredicate;
 import seedu.address.testutil.AddressBookBuilder;
@@ -104,12 +103,10 @@ public class ModelManagerTest {
         AddressBook addressBook = new AddressBookBuilder().withPerson(ALICE).withPerson(BENSON).build();
         AddressBook differentAddressBook = new AddressBook();
         UserPrefs userPrefs = new UserPrefs();
-        PredefinedAssignmentsData predefinedAssignmentsData = new PredefinedAssignmentsData();
-
 
         // same values -> returns true
-        modelManager = new ModelManager(addressBook, userPrefs, predefinedAssignmentsData);
-        ModelManager modelManagerCopy = new ModelManager(addressBook, userPrefs, predefinedAssignmentsData);
+        modelManager = new ModelManager(addressBook, userPrefs);
+        ModelManager modelManagerCopy = new ModelManager(addressBook, userPrefs);
         assertEquals(modelManager, modelManagerCopy);
 
         // same object -> returns true
@@ -122,12 +119,12 @@ public class ModelManagerTest {
         assertNotEquals(5, modelManager);
 
         // different addressBook -> returns false
-        assertNotEquals(modelManager, new ModelManager(differentAddressBook, userPrefs, predefinedAssignmentsData));
+        assertNotEquals(modelManager, new ModelManager(differentAddressBook, userPrefs));
 
         // different filteredList -> returns false
         String[] keywords = ALICE.getName().fullName.split("\\s+");
         modelManager.updateFilteredPersonList(new NameContainsKeywordsPredicate(Arrays.asList(keywords)));
-        assertNotEquals(modelManager, new ModelManager(addressBook, userPrefs, predefinedAssignmentsData));
+        assertNotEquals(modelManager, new ModelManager(addressBook, userPrefs));
 
         // resets modelManager to initial state for upcoming tests
         modelManager.updateFilteredPersonList(PREDICATE_SHOW_ALL_PERSONS);
@@ -135,7 +132,7 @@ public class ModelManagerTest {
         // different userPrefs -> returns false
         UserPrefs differentUserPrefs = new UserPrefs();
         differentUserPrefs.setAddressBookFilePath(Paths.get("differentFilePath"));
-        assertNotEquals(modelManager, new ModelManager(addressBook, differentUserPrefs, predefinedAssignmentsData));
+        assertNotEquals(modelManager, new ModelManager(addressBook, differentUserPrefs));
     }
 
     @Test
@@ -149,10 +146,5 @@ public class ModelManagerTest {
     public void getGitHubUsername_personDoesNotExist_nullReturned() {
         modelManager.addPerson(ALICE);
         assertNull(modelManager.getGitHubUsername(BOB.getName()));
-    }
-
-    @Test
-    public void test_getPredefinedAssignments() {
-        assertEquals(modelManager.getPredefinedAssignments(), new PredefinedAssignmentsData());
     }
 }

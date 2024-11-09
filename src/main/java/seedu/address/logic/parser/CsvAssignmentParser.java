@@ -1,6 +1,7 @@
 package seedu.address.logic.parser;
 
 import static java.util.Objects.requireNonNull;
+import static seedu.address.logic.commands.AddGradeCommand.INVALID_SCORE;
 
 import java.util.HashMap;
 import java.util.List;
@@ -60,14 +61,8 @@ public class CsvAssignmentParser {
         String asgnName = individual.get(0);
         float asgnScore = Float.parseFloat(individual.get(1));
 
-        // Throws Command exception if assignment name is invalid
-        if (!model.hasAssignment(asgnName)) {
-            throw new CommandException("Invalid assignment name: " + asgnName);
-        }
-
-        // Throws Command exception if score is invalid (not parser exception because this happens during execution)
-        if (asgnScore > model.getMaxScore(asgnName) || asgnScore < 0) {
-            throw new CommandException("Score must be between 0.0 and " + model.getMaxScore(asgnName));
+        if (asgnScore < 0) {
+            throw new CommandException(INVALID_SCORE);
         }
 
         assignments.put(asgnName, new Assignment(asgnName, asgnScore));

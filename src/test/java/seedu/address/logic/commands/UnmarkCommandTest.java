@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
@@ -26,7 +25,7 @@ public class UnmarkCommandTest {
 
     @BeforeEach
     public void setUp() {
-        model = new ModelManager(getTypicalAddressBook(), new UserPrefs(), new PredefinedAssignmentsData());
+        model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     }
 
     @Test
@@ -38,8 +37,7 @@ public class UnmarkCommandTest {
         UnmarkCommand unmarkCommand = new UnmarkCommand(personToUnmark.getName(), 1);
 
         Person expectedPerson = new PersonBuilder(personToUnmark).withAttendance().buildWithAttendance();
-        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs(),
-                new PredefinedAssignmentsData());
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(personToUnmark, expectedPerson);
 
         assertCommandSuccess(unmarkCommand, model, String.format(MESSAGE_UNMARK_SUCCESS,

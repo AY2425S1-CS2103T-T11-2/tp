@@ -15,7 +15,6 @@ import org.junit.jupiter.api.Test;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
@@ -26,7 +25,7 @@ public class MarkCommandTest {
 
     @BeforeEach
     public void setUp() {
-        model = new ModelManager(getTypicalAddressBook(), new UserPrefs(), new PredefinedAssignmentsData());
+        model = new ModelManager(getTypicalAddressBook(), new UserPrefs());
     }
 
     @Test
@@ -36,8 +35,7 @@ public class MarkCommandTest {
 
         Person markedPerson = new PersonBuilder(personToMark).withAttendance(1, 2, 3).build();
 
-        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs(),
-                new PredefinedAssignmentsData());
+        Model expectedModel = new ModelManager(model.getAddressBook(), new UserPrefs());
         expectedModel.setPerson(personToMark, markedPerson);
 
         assertCommandSuccess(markCommand, model, String.format(MESSAGE_MARK_SUCCESS,

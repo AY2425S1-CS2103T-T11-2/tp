@@ -15,13 +15,12 @@ import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
 import seedu.address.model.person.Name;
-import seedu.address.model.util.SampleAssignmentsUtil;
 import seedu.address.testutil.TypicalPersons;
 
 class ViewCommandTest {
     private final Model model = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(), SampleAssignmentsUtil.getSamplePredefinedAssignments());
+            new UserPrefs());
     @Test
     public void equalsHandleCorrectly() {
         ViewCommand test = new ViewCommand(new Name("Amy"));

@@ -25,7 +25,6 @@ import seedu.address.model.AddressBook;
 import seedu.address.model.Model;
 import seedu.address.model.ReadOnlyAddressBook;
 import seedu.address.model.ReadOnlyUserPrefs;
-import seedu.address.model.assignment.ReadOnlyPredefinedAssignmentsData;
 import seedu.address.model.person.Github;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
@@ -185,27 +184,7 @@ public class AddCommandTest {
         }
 
         @Override
-        public boolean hasAssignment(String name) {
-            throw new AssertionError("This method should not be called");
-        }
-
-        @Override
-        public float getMaxScore(String assignment) {
-            throw new AssertionError("This method should not be called");
-        }
-
-        @Override
-        public String getAssignmentName(String name) {
-            throw new AssertionError("This method should not be called");
-        }
-
-        @Override
         public boolean hasName(Name name) {
-            throw new AssertionError("This method should not be called");
-        }
-
-        @Override
-        public ReadOnlyPredefinedAssignmentsData getPredefinedAssignments() {
             throw new AssertionError("This method should not be called");
         }
 

@@ -17,7 +17,6 @@ import seedu.address.logic.Messages;
 import seedu.address.model.Model;
 import seedu.address.model.ModelManager;
 import seedu.address.model.UserPrefs;
-import seedu.address.model.assignment.PredefinedAssignmentsData;
 import seedu.address.model.person.Name;
 import seedu.address.model.person.Person;
 import seedu.address.testutil.PersonBuilder;
@@ -30,8 +29,8 @@ public class DeleteCommandTest {
 
     private final Model model = new ModelManager(
             getTypicalAddressBook(),
-            new UserPrefs(),
-            new PredefinedAssignmentsData());
+            new UserPrefs()
+           );
 
     @Test
     public void execute_validNameUnfilteredList_success() {
@@ -44,8 +43,7 @@ public class DeleteCommandTest {
 
         ModelManager expectedModel = new ModelManager(
                 model.getAddressBook(),
-                new UserPrefs(),
-                new PredefinedAssignmentsData());
+                new UserPrefs());
         expectedModel.deletePerson(personToDelete);
 
         assertCommandSuccess(deleteCommand, model, expectedMessage, expectedModel);
@@ -72,8 +70,7 @@ public class DeleteCommandTest {
 
         Model expectedModel = new ModelManager(
                 model.getAddressBook(),
-                new UserPrefs(),
-                new PredefinedAssignmentsData());
+                new UserPrefs());
         expectedModel.deletePerson(personToDelete);
         showNoPerson(expectedModel);
 
