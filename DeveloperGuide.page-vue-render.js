@@ -215,7 +215,7 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("User chooses to add a contact.")
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("3a. KonTActs detects an error in the input format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1.KonTActs requests for the corrected input.")])]),_v(" "),_c('li',[_c('p',[_v("3b2. User enters a new input.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 3a1 - 3a2 are repeated until input format is correct.")]),_v(" "),_c('p',[_v("Use cases resume from step 4.")])])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("3a. KonTActs detects an error in the input format.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1.KonTActs displays error message.")])]),_v(" "),_c('li',[_c('p',[_v("3a2. User enters a new input.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 3a1 - 3a2 are repeated until input format is correct.")]),_v(" "),_c('p',[_v("Use cases resume from step 4.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
@@ -233,13 +233,13 @@ with(this){return _c('ol',[_c('li',[_v("The contact that the user wants to delet
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User indicates to delete a contact.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs deletes the contact and indicates success.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User enters command to delete a contact.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs deletes the contact and indicates success.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. KonTActs detects an error in the input.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1.KonTActs requests for the user to try again.")])]),_v(" "),_c('li',[_c('p',[_v("1a2. User enters the command again")])]),_v(" "),_c('li',[_c('p',[_v("Steps 1a1 - 1a2 are repeated until the input entered is correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 2.")])])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("1a. KonTActs detects an error in the input.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("1a1.KonTActs displays error message.")])]),_v(" "),_c('li',[_c('p',[_v("1a2.User enters a new input.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 1a1 - 1a2 are repeated until the input entered is correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 2.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
@@ -263,7 +263,7 @@ with(this){return _c('ol',[_c('li',[_c('p',[_v("User chooses to add grades for a
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("4a. KonTActs detects an error in the entered data.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("4a1. KonTActs requests for the correct data.")])]),_v(" "),_c('li',[_c('p',[_v("4a2. User enters new data.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 4a1-4a2 are repeated until the data entered are correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 4.")]),_v(" "),_c('br')])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("3a. KonTActs detects an error in the entered data.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1. KonTActs requests for the correct data.")])]),_v(" "),_c('li',[_c('p',[_v("3a2. User enters new data.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 3a1-3a2 are repeated until the data entered are correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 4.")]),_v(" "),_c('br')])])])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
@@ -275,7 +275,7 @@ with(this){return _c('p',[_c('strong',[_v("Use case: UC04 - List contacts")])])}
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_v("User chooses to view the entire contact list.")]),_v(" "),_c('li',[_v("KonTActs displays the full list of contacts."),_c('br'),_v("\nUse case ends.")])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User chooses to view the entire contact list.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs displays the full list of contacts.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
@@ -293,13 +293,13 @@ with(this){return _c('p',[_c('strong',[_v("Use case: UC05 - Edit contacts")])])}
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("TA chooses to edit a contact’s details.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs requests the contact’s identifier.")])]),_v(" "),_c('li',[_c('p',[_v("TA enters the identifier of the contact to update.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs displays the current details and requests the changes.")])]),_v(" "),_c('li',[_c('p',[_v("TA updates the relevant details.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs saves and displays the changes.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User chooses to edit a contact’s details.")])]),_v(" "),_c('li',[_c('p',[_v("User enters the identifier (person's index), and updated information of the contact")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs saves and displays the changes.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
 },function anonymous(
 ) {
-with(this){return _c('ul',[_c('li',[_c('p',[_v("3a. KonTActs identifies that there is no such contact.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("3a1. KonTActs requests for the correct data.")])]),_v(" "),_c('li',[_c('p',[_v("3a2. TA enters the new data.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 3a1-3a2 are repeated until the data entered are correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 4.")])])])]),_v(" "),_c('li',[_c('p',[_v("4a. KonTActs identifies that the data to be updated is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("4a1. KonTActs requests for the correct data.")])]),_v(" "),_c('li',[_c('p',[_v("4a2. TA enters new data")])]),_v(" "),_c('li',[_c('p',[_v("Steps 4a1-4a2 are repeated until the data entered are correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 5.")])])])])])}
+with(this){return _c('ul',[_c('li',[_c('p',[_v("2a. KonTActs identifies that the index is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2a1. Error message is displayed.")])]),_v(" "),_c('li',[_c('p',[_v("2a2. TA enters the new index.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 2a1-2a2 are repeated until the data entered are correct.")]),_v(" "),_c('p',[_v("Use case resumes from step 3.")])])])]),_v(" "),_c('li',[_c('p',[_v("2b. KonTActs identifies that the data to be updated is invalid.")]),_v(" "),_c('ul',[_c('li',[_c('p',[_v("2b1. Error message is displayed.")])]),_v(" "),_c('li',[_c('p',[_v("2b2. TA enters new data to be updated.")])]),_v(" "),_c('li',[_c('p',[_v("Steps 2b1-2b2 are repeated until the data entered are valid.")]),_v(" "),_c('p',[_v("Use case resumes from step 5.")])])])])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
@@ -311,7 +311,7 @@ with(this){return _c('p',[_c('strong',[_v("Use case: UC06 - Filter Contact List"
 with(this){return _c('p',[_c('strong',[_v("MSS")])])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_c('p',[_v("User chooses to filter the contact list.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs requests the filter criteria (current overall grades, name, tele handle).")])]),_v(" "),_c('li',[_c('p',[_v("User enters the filter criteria.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs filters the contact list based on the entered criteria and displays the filtered list.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
+with(this){return _c('ol',[_c('li',[_c('p',[_v("User chooses to filter the contact list.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs requests the filter criteria (current overall grades, name, telegram handle).")])]),_v(" "),_c('li',[_c('p',[_v("User enters the filter criteria.")])]),_v(" "),_c('li',[_c('p',[_v("KonTActs filters the contact list based on the entered criteria and displays the filtered list.")]),_v(" "),_c('p',[_v("Use case ends.")])])])}
 },function anonymous(
 ) {
 with(this){return _c('p',[_c('strong',[_v("Extensions")])])}
@@ -407,7 +407,7 @@ with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
 with(this){return _c('h3',{attrs:{"id":"non-functional-requirements"}},[_v("Non-Functional Requirements"),_c('a',{staticClass:"fa fa-anchor",attrs:{"href":"#non-functional-requirements","onclick":"event.stopPropagation()"}})])}
 },function anonymous(
 ) {
-with(this){return _c('ol',[_c('li',[_v("Should work on any mainstream OS as long as it has Java 17 or above installed.")]),_v(" "),_c('li',[_v("Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.")]),_v(" "),_c('li',[_v("A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be able to accomplish most of the tasks faster using commands than using the mouse.")]),_v(" "),_c('li',[_v("Commands should be easy to remember.")]),_v(" "),_c('li',[_v("Ui should be easy to navigate and intuitive.")]),_v(" "),_c('li',[_v("KonTActs should be easy to use for new users.")]),_v(" "),_c('li',[_v("The system should work on both 32 bit and 64 bit environments.")]),_v(" "),_c('li',[_v("Contact details are securely stored.")]),_v(" "),_c('li',[_v("The application should have an uptime of at least 99.9% to ensure constant availability for users.")]),_v(" "),_c('li',[_v("The application should automatically save data after every change to avoid data loss in case of a crash.")]),_v(" "),_c('li',[_v("There should be proper documentation for the code and application usage to assist developers in future updates.")]),_v(" "),_c('li',[_v("Error messages should be descriptive, providing users with clear guidance on how to resolve the issue.")]),_v(" "),_c('li',[_v("Searching for or filtering contacts should take less than 5 seconds.")]),_v(" "),_c('li',[_v("Stored contacts are persisted between sessions.")])])}
+with(this){return _c('ol',[_c('li',[_v("Should work on any mainstream OS as long as it has Java 17 or above installed.")]),_v(" "),_c('li',[_v("Should be able to hold up to 1000 persons without a noticeable sluggishness in performance for typical usage.")]),_v(" "),_c('li',[_v("A user with above average typing speed for regular English text (i.e. not code, not system admin commands) should be\nable to accomplish most of the tasks faster using commands than using the mouse.")]),_v(" "),_c('li',[_v("Commands should be easy to remember.")]),_v(" "),_c('li',[_v("Ui should be easy to navigate and intuitive.")]),_v(" "),_c('li',[_v("KonTActs should be easy to use for new users.")]),_v(" "),_c('li',[_v("The system should work on both 32 bit and 64 bit environments.")]),_v(" "),_c('li',[_v("Contact details are securely stored.")]),_v(" "),_c('li',[_v("The application should have an uptime of at least 99.9% to ensure constant availability for users.")]),_v(" "),_c('li',[_v("The application should automatically save data after every change to avoid data loss in case of a crash.")]),_v(" "),_c('li',[_v("There should be proper documentation for the code and application usage to assist developers in future updates.")]),_v(" "),_c('li',[_v("Error messages should be descriptive, providing users with clear guidance on how to resolve the issue.")]),_v(" "),_c('li',[_v("Searching for or filtering contacts should take less than 5 seconds.")]),_v(" "),_c('li',[_v("Stored contacts are persisted between sessions.")])])}
 },function anonymous(
 ) {
 with(this){return _c('div',{staticClass:"d-print-none"},[_c('hr')])}
@@ -449,6 +449,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing/corrupted data files")]),_v(" "),_c('ol',[_c('li',[_c('em',[_v("{explain how to simulate a missing/corrupted file, and the expected behavior}")])])])]),_v(" "),_c('li',[_c('p',[_c('em',[_v("{ more test cases …​ }")])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Mon, 11 Nov 2024, 19:37:34 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Mon, 11 Nov 2024, 20:29:10 GMT+8]")])])])}
 }];
   
