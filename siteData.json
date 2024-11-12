@@ -54,6 +54,7 @@
         "add-contacts": "Add contacts",
         "add-grade-implementation": "Add Grade implementation",
         "markcommand": "MarkCommand",
+        "export-command-implementation": "Export Command implementation",
         "command-history-implementation": "Command History implementation",
         "documentation-logging-testing-configuration-dev-ops": "Documentation, logging, testing, configuration, dev-ops",
         "appendix-requirements": "Appendix: Requirements",
