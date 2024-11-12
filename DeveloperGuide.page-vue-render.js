@@ -581,6 +581,6 @@ with(this){return _c('h3',{attrs:{"id":"saving-data"}},[_v("Saving data"),_c('a'
 with(this){return _c('ol',[_c('li',[_c('p',[_v("Dealing with missing files")]),_v(" "),_c('ol',[_c('li',[_c('p',[_v("Test case: Remove "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v(".json")]),_v(" from "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("data")]),_v(". "),_c('br'),_v("\nExpected: A sample list of KonTActs will be loaded.")])]),_v(" "),_c('li',[_c('p',[_v("Test case: Add an invalid value to "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("kontacts.json")]),_v(". e.g. "),_c('code',{pre:true,attrs:{"class":"hljs inline no-lang"}},[_v("\"email\":1")]),_c('br'),_v("\nExpected: No contacts will be loaded.")])])])])])}
 },function anonymous(
 ) {
-with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 11:47:42 GMT+8]")])])])}
+with(this){return _c('footer',[_c('div',{staticClass:"text-center"},[_c('small',[_v("["),_c('span',[_c('strong',[_v("Powered by")])]),_v(" "),_c('img',{attrs:{"src":"https://markbind.org/favicon.ico","width":"30"}}),_v(" "),_c('a',{attrs:{"href":"https://markbind.org/"}},[_v("MarkBind 5.5.3")]),_v(", generated on Tue, 12 Nov 2024, 11:50:27 GMT+8]")])])])}
 }];
   
